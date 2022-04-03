@@ -10,9 +10,12 @@ export const CardListItem = ({ card }: { card: Card }) => {
   return (
     <li className="p-2">
       <div
-        className={classNames("aspect-card relative transition-transform", {
-          "rotate-y-180": showBackface,
-        })}
+        className={classNames(
+          "aspect-card relative transition-transform duration-300",
+          {
+            "rotate-y-180": showBackface,
+          }
+        )}
         style={{ transformStyle: "preserve-3d" }}
       >
         <img
