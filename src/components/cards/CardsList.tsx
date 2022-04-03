@@ -21,7 +21,7 @@ export const CardsList = ({ filter }: { filter: string }) => {
     <>
       <ol className="grid grid-cols-2 md:grid-cols-4 mt-8 gap-2">
         {renderedCards.map((card) => (
-          <CardListItem card={card} />
+          <CardListItem key={card.id} card={card} />
         ))}
       </ol>
     </>

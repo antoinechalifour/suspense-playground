@@ -3,6 +3,7 @@ import { Page } from "../Page";
 import { CardsList } from "./CardsList";
 import { PageTitle } from "./PageTitle";
 import { SearchCardsBox } from "./SearchCardsBox";
+import { Outlet } from "react-router-dom";
 
 export const CardsPage = () => {
   const [, startTransition] = React.useTransition();
