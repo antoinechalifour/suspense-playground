@@ -7,7 +7,7 @@ export const CardListItem = ({ card }: { card: Card }) => (
       src={card.images.small}
       alt={card.name}
       loading="lazy"
-      className="aspect-card w-full drop-shadow transition-all scale-100 hover:scale-125 opacity-90 hover:opacity-100"
+      className="aspect-card w-full drop-shadow transition-all scale-100 md:hover:scale-125 md:opacity-90 md:hover:opacity-100"
     />
     <div className="mt-2 text-center">
       <span className="rounded-lg text-sm font-semibold shadow shadow-sky-100 py-1 px-4 bg-sky-50 text-sky-600 ">

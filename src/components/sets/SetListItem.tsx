@@ -5,7 +5,7 @@ type SetListItemProps = { set: CardSet };
 export const SetListItem = ({ set }: SetListItemProps) => (
   <li
     key={set.id}
-    className="flex flex-col p-4 rounded-lg transition-all scale-100 hover:scale-110 bg-transparent hover:bg-sky-50"
+    className="flex flex-col p-4 rounded-lg transition-all scale-100 md:hover:scale-110 bg-transparent md:hover:bg-sky-50"
   >
     <img
       src={set.images.logo}
