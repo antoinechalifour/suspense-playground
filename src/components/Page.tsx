@@ -4,7 +4,7 @@ import { Loader } from "./Loader";
 
 type TitleProps = { children: ReactNode };
 const Title = ({ children }: TitleProps) => (
-  <h2 className="text-5xl font-light min-h-[48px] truncate">{children}</h2>
+  <h2 className="text-5xl font-light pb-1 min-h-[52px] truncate">{children}</h2>
 );
 
 type HeaderProps = { title: ReactNode };
@@ -31,7 +31,7 @@ const Content = ({ children }: ContentProps) => (
 type PageRootProps = { children: ReactNode };
 const PageRoot = ({ children }: PageRootProps) => (
   <Suspense fallback={null}>
-    <div className="max-w-screen-md m-auto py-8 px-2 font-mono">{children}</div>
+    <div className="max-w-screen-md m-auto py-8 px-2">{children}</div>
   </Suspense>
 );
 

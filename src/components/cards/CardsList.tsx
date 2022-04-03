@@ -3,9 +3,9 @@ import useSWR from "swr";
 import { Card } from "../../types";
 import { fetcher } from "../../fetcher";
 import { CardListItem } from "./CardListItem";
-import React from "react";
+import React, { useState } from "react";
 
-export const CardsList = () => {
+export const CardsList = ({ filter }: { filter: string }) => {
   const params = useParams();
   const { data: response } = useSWR<{ data: Card[] }>(
     `/v2/cards?q=set.id:${params.setId}`,
@@ -13,11 +13,17 @@ export const CardsList = () => {
     { suspense: true }
   );
 
+  const renderedCards = response!.data.filter((card) =>
+    card.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
   return (
-    <ol className="grid grid-cols-2 md:grid-cols-4 mt-8 gap-2">
-      {response!.data.map((card) => (
-        <CardListItem card={card} />
-      ))}
-    </ol>
+    <>
+      <ol className="grid grid-cols-2 md:grid-cols-4 mt-8 gap-2">
+        {renderedCards.map((card) => (
+          <CardListItem card={card} />
+        ))}
+      </ol>
+    </>
   );
 };
