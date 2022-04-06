@@ -31,7 +31,7 @@ const Content = ({ children }: ContentProps) => (
 type PageRootProps = { children: ReactNode };
 const PageRoot = ({ children }: PageRootProps) => (
   <Suspense fallback={null}>
-    <div className="max-w-screen-md m-auto py-8 px-2">{children}</div>
+    <div className="max-w-screen-lg m-auto py-8 px-2">{children}</div>
   </Suspense>
 );
 
