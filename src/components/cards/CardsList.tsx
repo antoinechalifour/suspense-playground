@@ -8,7 +8,7 @@ import React, { useState } from "react";
 export const CardsList = ({ filter }: { filter: string }) => {
   const params = useParams();
   const { data: response } = useSWR<{ data: Card[] }>(
-    `/v2/cards?q=set.id:${params.setId}`,
+    `/v2/cards?q=set.id:${params.setId}&orderBy:number`,
     fetcher,
     { suspense: true }
   );
